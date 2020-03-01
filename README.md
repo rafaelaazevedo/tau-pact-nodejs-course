@@ -4,7 +4,7 @@ A simple Nodejs + graphQL project configuring contract tests with PactJS
 <br>
 <br>
 
-**CLI
+## Running via CLI
 
 - Open the terminal on your project's folder
 - Run the command:
