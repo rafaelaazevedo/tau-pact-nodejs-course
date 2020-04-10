@@ -8,6 +8,9 @@
 
 A simple Nodejs + Jest project configuring contract tests with PactJS
 <br>
+
+This Branch is just the setup of the API and initial project
+
 <br>
 
 ## Running via CLI
@@ -16,10 +19,10 @@ A simple Nodejs + Jest project configuring contract tests with PactJS
 
 - Install Node packages:
 `npm install`
-
+<!-- 
 - Run the contract tests:
 `npm test:contract`
 
 - Publish the contracts:
 `npm publish:contract`
-
+ -->

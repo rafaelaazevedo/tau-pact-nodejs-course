@@ -4,9 +4,7 @@
   "description": "A simple Nodejs + jest project configuring contract tests with PactJS",
   "main": "src/index.js",
   "scripts": {
-    "start": "node src/index.js",
-    "test:contract": "jest __tests__/contract --runInBand --setupFiles ./__tests__/helpers/pactSetup.js --setupTestFrameworkScriptFile=./__tests__/helpers/pactTestWrapper.js",
-    "publish:contract": "node ./__tests__/helpers/publish.js"
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
@@ -28,7 +26,6 @@
   },
   "homepage": "https://github.com/rafaelaazevedo/tau-pact-nodejs-course#readme",
   "devDependencies": {
-    "@pact-foundation/pact": "^9.7.0",
     "eslint": "^6.8.0",
     "jest": "^25.1.0",
     "axios": "^0.19.0"
