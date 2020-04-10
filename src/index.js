@@ -1,55 +1,27 @@
-const express = require('express')
-const bodyParser = require('body-parser')
-const Routes = require('./routes')
+"use strict"
 
-class App {
+const axios = require("axios")
 
-    /**
-     * 
-     * 
-     * Sets the properties to be used by this class to create the server
-     * 
-     */
-    constructor() {
-        this.expressApp = express()
+exports.getEmails = endpoint => {
+  const url = endpoint.url
+  const port = endpoint.port
 
-        //Literal object containing the configurations
-        this.configs = {
-            get port() {
-                return process.env.PORT || 8080
-            }
-        }
-    }
-
-    /**
-     * 
-     * 
-     * Applies any middleware to be used by this app
-     * 
-     */
-    applyMiddleware() {
-        //Allows the server to parse json
-        this.expressApp.use(bodyParser.json())
-
-        //Registers the routes used by the app
-        new Routes(this.expressApp)
-    }
-
-    /**
-     * 
-     * 
-     * Runs the app
-     * 
-     */
-    run() {
-        this.expressApp.listen(this.configs.port, () => {
-            console.log("Express server running project on port " + this.configs.port + ".")
-            console.log(`Environment: ${process.env.STAGE || "development"}`)
-        })
-    }
+  return axios.request({
+    method: "GET",
+    baseURL: `${url}:${port}`,
+    url: "/emails",
+    headers: { Accept: "application/json" },
+  })
 }
 
-//Runs the thing
-const app = new App()
-app.applyMiddleware()
-app.run()
+exports.getClients = endpoint => {
+  const url = endpoint.url
+  const port = endpoint.port
+
+  return axios.request({
+    method: "GET",
+    baseURL: `${url}:${port}`,
+    url: "/clients?clientId=2414e594-625a-4f9d-95ce-5143d7deb860",
+    headers: { Accept: "application/json" },
+  })
+}

@@ -1,11 +1,12 @@
 {
   "name": "tau-pact-nodejs-course",
   "version": "1.0.0",
-  "description": "A simple Nodejs + graphQL project configuring contract tests with PactJS",
+  "description": "A simple Nodejs + jest project configuring contract tests with PactJS",
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test": ""
+    "test": "jest __tests__/contract --runInBand --setupFiles ./__tests__/helpers/pactSetup.js --setupTestFrameworkScriptFile=./__tests__/helpers/pactTestWrapper.js",
+    "publish:pact": "node ./publish.js"
   },
   "repository": {
     "type": "git",
@@ -18,7 +19,6 @@
     "pact",
     "tutorial",
     "course",
-    "graphql",
     "tau"
   ],
   "author": "Rafaela Azevedo",
@@ -27,13 +27,13 @@
     "url": "https://github.com/rafaelaazevedo/tau-pact-nodejs-course/issues"
   },
   "homepage": "https://github.com/rafaelaazevedo/tau-pact-nodejs-course#readme",
-  "dependencies": {
+  "devDependencies": {
     "@pact-foundation/pact": "^9.7.0",
-    "body-parser": "^1.17.2",
-    "express": "^4.15.3",
-    "express-graphql": "^0.6.11",
-    "graphql": "^0.12.3",
+    "eslint": "^6.8.0",
     "jest": "^25.1.0",
-    "mysql": "^2.17.1"
+    "axios": "^0.19.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
