@@ -7,6 +7,8 @@ let opts = {
   pactBrokerUsername: process.env.PACT_USERNAME,
   pactBrokerPassword: process.env.PACT_PASSWORD,
   consumerVersion: "1.0.0",
+  providerVerion: "1.0.0",
+  tags: "test"
 }
 
 publisher.publishPacts(opts)
