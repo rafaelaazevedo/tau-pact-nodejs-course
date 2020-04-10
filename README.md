@@ -4,8 +4,6 @@
 
 [![Known Vulnerabilities](https://snyk.io/test/github/rafaelaazevedo/tau-pact-nodejs-course/badge.svg?targetFile=package.json)](https://snyk.io/test/github/rafaelaazevedo/tau-pact-nodejs-course?targetFile=package.json)
 
-[![Pact Status](https://azevedorafaela.pact.dius.com.au/pacts/provider/ClientProvider/consumer/ClientConsumer/latest/badge.svg)](https://azevedorafaela.pact.dius.com.au)
-
 # PactJS project for the Test Automation University course
 
 A simple Nodejs + Jest project configuring contract tests with PactJS
