@@ -5,8 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "start": "node src/index.js",
-    "test:contract": "jest __tests__/contract --runInBand --setupFiles ./__tests__/helpers/pactSetup.js --setupTestFrameworkScriptFile=./__tests__/helpers/pactTestWrapper.js",
-    "publish:contract": "node ./__tests__/helpers/publish.js"
+    "test:contract": "jest __tests__/contract --runInBand --setupFiles ./__tests__/helpers/pactSetup.js --setupTestFrameworkScriptFile=./__tests__/helpers/pactTestWrapper.js"
   },
   "repository": {
     "type": "git",
