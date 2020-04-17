@@ -7,7 +7,7 @@ const getClients = require("../../src").getClients
 describe("client's API", () => {
   let url = "http://localhost"
 
-  const EXPECTED_BODY = { client: "2414e594-625a-4f9d-95ce-5143d7deb860" }
+  const EXPECTED_BODY = [{ clientId: "2414e594-625a-4f9d-95ce-5143d7deb860" }, {clientId: "a460104c-edf9-4345-922f-a781678e0d61"}]
 
   afterEach(() => {
     return provider.verify()
@@ -22,7 +22,7 @@ describe("client's API", () => {
           method: "GET",
           path: "/clients",
           query: {
-            "clientId": Matchers.like("a460104c-edf9-4345-922f-a781678e0d61"),
+            "clientId": Matchers.eachLike("a460104c-edf9-4345-922f-a781678e0d61"),
           },
           headers: {
             Accept: "application/json",

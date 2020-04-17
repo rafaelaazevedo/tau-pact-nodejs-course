@@ -7,13 +7,22 @@
   },
   "interactions": [
     {
-      "description": "a request for emails",
-      "providerState": "I have a list of emails",
+      "description": "a request for clients with given clientId",
+      "providerState": "i have a list of clients",
       "request": {
         "method": "GET",
-        "path": "/emails",
+        "path": "/clients",
+        "query": "clientId=a460104c-edf9-4345-922f-a781678e0d61",
         "headers": {
           "Accept": "application/json"
+        },
+        "matchingRules": {
+          "$.query.clientId": {
+            "min": 1
+          },
+          "$.query.clientId[*].*": {
+            "match": "type"
+          }
         }
       },
       "response": {
@@ -23,7 +32,10 @@
         },
         "body": [
           {
-            "email": "test-pact@tau.com"
+            "clientId": "2414e594-625a-4f9d-95ce-5143d7deb860"
+          },
+          {
+            "clientId": "a460104c-edf9-4345-922f-a781678e0d61"
           }
         ]
       }
