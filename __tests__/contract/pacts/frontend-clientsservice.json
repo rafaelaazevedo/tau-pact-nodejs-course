@@ -42,6 +42,33 @@
           }
         ]
       }
+    },
+    {
+      "description": "a request to create client with firstname and lastname",
+      "providerState": "i create a new client",
+      "request": {
+        "method": "POST",
+        "path": "/clients",
+        "headers": {
+          "Content-Type": "application/json;charset=utf-8"
+        },
+        "body": {
+          "firstName": "Rafaela",
+          "lastName": "Azevedo",
+          "age": 29
+        }
+      },
+      "response": {
+        "status": 200,
+        "headers": {
+        },
+        "body": {
+          "firstName": "Rafaela",
+          "lastName": "Azevedo",
+          "age": 29,
+          "id": 3
+        }
+      }
     }
   ],
   "metadata": {

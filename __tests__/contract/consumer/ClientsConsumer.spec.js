@@ -56,4 +56,47 @@ describe("Clients Service", () => {
             expect(response.status).toEqual(200)
         })
     })
+
+    const POST_BODY = {
+        firstName: "Rafaela",
+        lastName: "Azevedo",
+        age: 29
+    }
+
+    const POST_EXPECTED_BODY = {
+        firstName: POST_BODY.firstName,
+        lastName: POST_BODY.lastName,
+        age: POST_BODY.age,
+        id: 3
+    }
+
+    describe("POST Client", () => {
+        beforeEach(() => {
+            const interaction = {
+                state: "i create a new client",
+                uponReceiving: "a request to create client with firstname and lastname",
+                withRequest: {
+                    method: "POST",
+                    path: "/clients",
+                    headers: {
+                        "Content-Type": "application/json;charset=utf-8"
+                    },
+                    body: POST_BODY,
+                },
+                willRespondWith: {
+                    status: 200,
+                    body: Matchers.like(POST_EXPECTED_BODY).contents,
+                },
+            }
+
+            return provider.addInteraction(interaction)
+        })
+
+        test("returns correct body, header and statusCode", async() => {
+            const response = await postClient(POST_BODY)
+            console.log(response.data)
+            expect(response.data.id).toEqual(3)
+            expect(response.status).toEqual(200)
+        })
+    })
 })
