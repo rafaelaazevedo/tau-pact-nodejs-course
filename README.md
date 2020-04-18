@@ -23,11 +23,11 @@ A simple Nodejs + Jest project configuring contract tests with PactJS
 - Run the provider contract tests (Verify the contracts):
 `npm run test:provider`
 
-- Run the provider server (Client API/Service):
+- Run the provider server (Client API/Service) on `http://localhost:8081`:
 `npm run provider`
 
-- Run the consumer server (Client API/Service):
-`npm run provider`
+- Run the consumer server (Client API/Service) on `http://localhost:8080`:
+`npm run consumer`
 
 - Publish the contracts:
 `npm run publish:contract`
