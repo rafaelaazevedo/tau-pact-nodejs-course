@@ -5,7 +5,9 @@
   "main": "src/index.js",
   "scripts": {
     "consumer": "node src/consumerService.js",
-    "provider": "node src/providerService.js"
+    "provider": "node src/providerService.js",
+    "test:consumer": "jest __tests__/contract/consumer --runInBand --setupFiles ./__tests__/helpers/pactSetup.js --setupTestFrameworkScriptFile=./__tests__/helpers/pactTestWrapper.js",
+    "test:provider": "jest __tests__/contract/provider --runInBand --force-exit"
   },
   "repository": {
     "type": "git",
