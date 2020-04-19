@@ -9,6 +9,7 @@
 A simple Nodejs + Jest project configuring contract tests with PactJS
 <br>
 <br>
+If you are running your pact broker locally following these [instructions](https://github.com/pact-foundation/pact_broker#to-have-a-play-around-on-your-local-machine) then you can run the provider and the publish the way it is, otherwise you will need to modify the pactUrls to the local path and if you are using docker as your pact broker than you need to update the publish script accordingly.
 
 ## Running via CLI
 
