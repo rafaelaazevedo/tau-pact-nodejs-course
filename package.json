@@ -30,6 +30,7 @@
   },
   "homepage": "https://github.com/rafaelaazevedo/tau-pact-nodejs-course#readme",
   "devDependencies": {
+    "@pact-foundation/pact": "^9.7.0", 
     "axios": "^0.19.0",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
